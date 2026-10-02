@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bill-page">
+    <h1>FoodHub</h1>
+    <h2>Order Bill</h2>
+    <p><strong>Order ID:</strong>{{order_id}}</p>
+    <p><strong>Date:</strong>{{date}}</p>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{item.item}}</td>
+            <td>{{item.quantity}}</td>
+            <td>₹{{"%.2f"|format(item.price)}}</td>
+            <td>₹{{"%.2f"|format(item.total)}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    <div class="bill">
+        <p>Subtotal:
+            ₹{{"%.2f"|format(subtotal)}}
+        </p>
+        <p>GST:
+            ₹{{"%.2f"|format(tax)}}
+        </p>
+        <h2>Grand total:
+            ₹{{"%.2f"|format(total)}}
+        </h2>
+    </div>
+    <a href="/menu" class="button">New Order</a>
+</div>
+{% endblock %}

@@ -1,0 +1,1025 @@
+/* =========================================================
+   FOODHUB - RESTAURANT MANAGEMENT SYSTEM
+   Modern Blue Theme
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #dbeafe 0%,
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            #bfdbfe 0%,
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #f8fbff,
+            #eef5fc
+        );
+
+    color: #172033;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   NAVIGATION BAR
+   ========================================================= */
+
+nav {
+    height: 72px;
+
+    background: #082f49;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 5px 25px rgba(8, 47, 73, 0.20);
+}
+
+
+/* Logo */
+
+nav h2 {
+    color: #ffffff;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    margin: 0;
+}
+
+
+/* Navigation links */
+
+nav div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+}
+
+nav a {
+    color: #f1f5f9;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #93c5fd;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.container {
+    width: 86%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 45px 0 70px;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1 {
+    color: #082f49;
+
+    font-size: 34px;
+
+    margin-bottom: 30px;
+
+    font-weight: 700;
+}
+
+h2 {
+    color: #0f3557;
+
+    margin: 30px 0 20px;
+
+    font-weight: 700;
+}
+
+h3 {
+    color: #173b5e;
+}
+
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 350px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 65px;
+
+    border-radius: 28px;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(96, 165, 250, 0.35),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #061b2e,
+            #0f3d68 55%,
+            #1d4ed8
+        );
+
+    box-shadow:
+        0 25px 50px rgba(15, 42, 67, 0.25);
+
+    margin-bottom: 45px;
+}
+
+
+/* Decorative circle */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+
+    height: 230px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(96, 165, 250, 0.12);
+
+    right: -60px;
+
+    top: -70px;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+
+    height: 150px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(147, 197, 253, 0.10);
+
+    right: 150px;
+
+    bottom: -80px;
+}
+
+
+/* Hero heading */
+
+.hero h1 {
+    position: relative;
+
+    z-index: 2;
+
+    color: #ffffff;
+
+    font-size: 45px;
+
+    max-width: 700px;
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+}
+
+
+/* Hero paragraph */
+
+.hero p {
+    position: relative;
+
+    z-index: 2;
+
+    color: #e0f2fe;
+
+    font-size: 18px;
+
+    max-width: 650px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   BUTTON / LINK BUTTON
+   ========================================================= */
+
+.button {
+    position: relative;
+
+    z-index: 5;
+
+    width: fit-content;
+
+    display: inline-block;
+
+    background: #ffffff;
+
+    color: #1557b0;
+
+    padding: 13px 27px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+
+    color: #123f7a;
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   DASHBOARD CARDS
+   ========================================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+
+    margin-bottom: 45px;
+}
+
+.card {
+    position: relative;
+
+    background: #ffffff;
+
+    padding: 27px;
+
+    border-radius: 18px;
+
+    border: 1px solid #dce7f2;
+
+    box-shadow:
+        0 10px 30px rgba(15, 42, 67, 0.08);
+
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Top blue line */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1d4ed8,
+            #60a5fa
+        );
+}
+
+
+/* Decorative circle */
+
+.card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+
+    right: -30px;
+
+    bottom: -30px;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 35px rgba(15, 42, 67, 0.13);
+}
+
+.card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    color: #475569;
+
+    font-size: 14px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.6px;
+
+    margin-bottom: 12px;
+}
+
+.card h2 {
+    position: relative;
+
+    z-index: 2;
+
+    color: #082f49;
+
+    font-size: 30px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   MENU GRID
+   ========================================================= */
+
+.menu-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   MENU CARD
+   ========================================================= */
+
+.menu-card {
+    position: relative;
+
+    background: #ffffff;
+
+    padding: 12px;
+
+    border-radius: 20px;
+
+    border: 1px solid #dce7f2;
+
+    box-shadow:
+        0 10px 28px rgba(15, 42, 67, 0.08);
+
+    transition: all 0.3s ease;
+
+    overflow: hidden;
+}
+
+
+/* Top line */
+
+.menu-card::before {
+    content: "";
+
+    position: absolute;
+
+    height: 4px;
+
+    left: 0;
+
+    right: 0;
+
+    top: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #60a5fa
+        );
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(15, 42, 67, 0.13);
+}
+
+.menu-card h2 {
+    margin: 5px 0 10px;
+
+    font-size: 22px;
+
+    color: #082f49;
+}
+
+.menu-card h3 {
+    color: #1d4ed8;
+
+    font-size: 25px;
+
+    margin: 18px 0;
+}
+
+.menu-card p {
+    color: #334155;
+
+    margin: 10px 0;
+}
+
+
+/* =========================================================
+   FOOD IMAGES
+   ========================================================= */
+
+.food-image {
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #eaf2fb;
+}
+
+.food-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.menu-card:hover .food-image img {
+    transform: scale(1.08);
+}
+
+.food-details {
+    padding: 18px 8px 8px;
+}
+
+.food-stock {
+    color: #64748b !important;
+    font-size: 13px !important;
+    margin: 5px 0 !important;
+}
+
+.food-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.food-bottom h3 {
+    color: #1d4ed8;
+    font-size: 25px;
+    margin: 10px 0 15px;
+}
+
+.order-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.order-row input {
+    width: 70px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.order-row button {
+    flex: 1;
+}
+
+
+/* =========================================================
+   CATEGORY BADGE
+   ========================================================= */
+
+
+.category {
+    display: inline-block;
+
+    background: #dbeafe;
+
+    color: #1e40af !important;
+
+    padding: 6px 13px;
+
+    border-radius: 20px;
+
+    font-size: 12px !important;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+form {
+    margin-top: 18px;
+}
+
+label {
+    display: block;
+
+    color: #334155;
+
+    font-weight: 600;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+input {
+    width: 100%;
+
+    padding: 12px 13px;
+
+    background: #ffffff;
+
+    color: #172033;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    margin-bottom: 12px;
+
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: #64748b;
+}
+
+input:focus {
+    outline: none;
+
+    border-color: #3b82f6;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: #ffffff;
+
+    padding: 12px 20px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 6px 15px rgba(37, 99, 235, 0.20);
+}
+
+button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #1d4ed8,
+            #1e40af
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(37, 99, 235, 0.28);
+}
+
+.checkout {
+    width: 100%;
+
+    padding: 15px;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(15, 42, 67, 0.08);
+
+    margin-bottom: 30px;
+}
+
+th {
+    background:
+        linear-gradient(
+            135deg,
+            #082f49,
+            #164e7a
+        );
+
+    color: #ffffff;
+
+    padding: 17px;
+
+    text-align: left;
+
+    font-size: 14px;
+}
+
+td {
+    padding: 16px;
+
+    border-bottom: 1px solid #e5edf5;
+
+    color: #1e293b;
+
+    font-size: 14px;
+}
+
+tr:hover {
+    background: #f1f7ff;
+}
+
+
+/* =========================================================
+   REMOVE LINK
+   ========================================================= */
+
+.remove {
+    color: #1d4ed8;
+
+    text-decoration: none;
+
+    font-weight: 700;
+}
+
+.remove:hover {
+    color: #1e40af;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   BILL
+   ========================================================= */
+
+.bill {
+    background: #ffffff;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    max-width: 500px;
+
+    margin-left: auto;
+
+    box-shadow:
+        0 10px 30px rgba(15, 42, 67, 0.08);
+}
+
+.bill p {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 9px 0;
+
+    color: #334155;
+}
+
+.bill strong {
+    color: #0f172a;
+}
+
+.bill h2 {
+    border-top: 1px solid #dbe5ef;
+
+    padding-top: 17px;
+
+    color: #082f49;
+}
+
+
+/* =========================================================
+   EMPTY CART
+   ========================================================= */
+
+.empty {
+    text-align: center;
+
+    background: #ffffff;
+
+    padding: 80px 30px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 42, 67, 0.08);
+}
+
+.empty h2 {
+    color: #334155;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   BILL PAGE
+   ========================================================= */
+
+.bill-page {
+    background: #ffffff;
+
+    color: #1e293b;
+
+    padding: 45px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(15, 42, 67, 0.09);
+}
+
+.bill-page h1 {
+    color: #1d4ed8;
+
+    margin-bottom: 5px;
+}
+
+.bill-page > h2 {
+    margin-top: 0;
+
+    color: #334155;
+}
+
+.bill-page p {
+    color: #334155;
+
+    margin: 8px 0;
+}
+
+.bill-page .button {
+    margin-top: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   OUT OF STOCK
+   ========================================================= */
+
+.out {
+    background: #dbeafe;
+
+    color: #1e3a8a !important;
+
+    padding: 11px;
+
+    border-radius: 9px;
+
+    text-align: center;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SALES SECTION
+   ========================================================= */
+
+.sales-section {
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+    transition: 0.3s;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .menu-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    nav {
+        padding: 0 20px;
+    }
+
+    nav h2 {
+        font-size: 22px;
+    }
+
+    nav div {
+        gap: 13px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        padding: 45px 25px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .food-image {
+        height: 220px;
+    }
+
+    .bill-page {
+        padding: 25px 18px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+
+}

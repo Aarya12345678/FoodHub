@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="menu-header">
+    <p class="small-heading">OUR MENU</p>
+
+    <h1>Choose Your Favorite</h1>
+
+    <p class="menu-description">
+        Freshly prepared dishes made for every craving.
+    </p>
+</div>
+
+
+<div class="menu-grid">
+
+    {% for item in menu %}
+
+    <div class="menu-card">
+
+        <!-- FOOD IMAGE -->
+        <div class="food-image">
+
+            {% if item.item == "BURGER" %}
+
+                <img
+                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+                    alt="Burger"
+                >
+
+            {% elif item.item == "PIZZA" %}
+
+                <img
+                    src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80"
+                    alt="Pizza"
+                >
+
+            {% elif item.item == "FRENCH FRIES" %}
+
+                <img
+                    src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80"
+                    alt="French Fries"
+                >
+
+            {% elif item.item == "PASTA" %}
+
+                <img
+                    src="https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?auto=format&fit=crop&w=800&q=80"
+                    alt="Pasta"
+                >
+
+            {% elif item.item == "MOJITO" %}
+
+                <img
+                    src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80"
+                    alt="Mojito"
+                >
+
+            {% elif item.item == "ICE CREAM" %}
+
+                <img
+                    src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80"
+                    alt="Ice Cream"
+                >
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- FOOD DETAILS -->
+        <div class="food-details">
+
+            <span class="category">
+                {{ item.category }}
+            </span>
+
+            <h2>
+                {{ item.item }}
+            </h2>
+
+            <p class="food-stock">
+                {{ item.stock }} available
+            </p>
+
+
+            <div class="food-bottom">
+
+                <h3>
+                    ₹{{ item.price }}
+                </h3>
+
+            </div>
+
+
+            <!-- ADD TO CART -->
+            {% if item.stock > 0 %}
+
+            <form
+                action="/add_to_cart/{{ item.item_id }}"
+                method="POST"
+            >
+
+                <div class="order-row">
+
+                    <input
+                        type="number"
+                        name="quantity"
+                        value="1"
+                        min="1"
+                        max="{{ item.stock }}"
+                        required
+                    >
+
+                    <button type="submit">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            {% else %}
+
+                <p class="out">
+                    Currently Unavailable
+                </p>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

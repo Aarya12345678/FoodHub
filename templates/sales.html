@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Sales Dashboard</h1>
+<div class="cards">
+    <div class="card">
+        <h3>Total Orders</h3>
+        <h2>{{total_orders}}</h2>
+    </div>
+    <div class="card">
+        <h3>Total Revenue</h3>
+        <h2>₹{{"%.2f"|format(revenue)}}</h2>
+    </div>
+    <div class="card">
+        <h3>AVerage Orders</h3>
+        <h2>₹{{"%.2f"|format(average_order)}}</h2>
+    </div>
+    <div class="card">
+        <h3>Best Selling Item</h3>
+        <h2>{{best_item}}</h2>
+</div>
+</div>
+<h2>Item Sales</h2>
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Quantity Sold</th>
+        <th>Revenue</th>
+    </tr>
+    {% for item in item_sales %}
+    <tr>
+        <td>{{item.item}}</td>
+        <td>{{item.quantity}}</td>
+        <td>₹{{"%.2f"|format(item.revenue)}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<h2>Category Wise Revenue</h2>
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Revenue</th>
+    </tr>
+    {% for category in category_sales %}
+    <tr>
+        <td>{{category.category}}</td>
+        <td>₹{{"%.2f"|format(category.total)}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

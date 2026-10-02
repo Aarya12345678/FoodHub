@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Your Orders</h1>
+{% if cart %}
+<table>
+    <tr>
+    <th>Item</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Total</th>
+    <th>Action</th>
+    </tr>
+    {% for item in cart %}
+    <tr>
+        <td>{{item.item}}</td>
+        <td>₹{{"%.2f"|format(item.price)}}</td>
+        <td>{{item.quantity}}</td>
+        <td>₹{{"%.2f"|format(item.total)}}</td>
+        <td><a class="remove" href="/remove/{{item.item_id}}">Remove</a></td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+<div class="bill">
+    <p>Subtotal:
+        <strong>₹{{"%.2f"|format(subtotal)}}</strong>
+    </p>
+    <p>GST(5%):
+        <strong>₹{{"%.2f"|format(tax)}}</strong>
+    </p>
+    <h2>Total:
+        ₹{{"%.2f"|format(total)}}
+        </h2>
+    <form action="/place_order" method="POST">
+        <button class="checkout"type="submit">Place Order</button>
+    </form>
+    
+</div>
+{% else %}
+<div class="empty">
+    <h2>Your cart is empty</h2>
+    <a href="/menu" class="button">Browse Menu</a>
+</div>
+{% endif %}
+
+{% endblock %}

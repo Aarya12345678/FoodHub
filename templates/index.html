@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="hero">
+    <h1>Restaurant Order Management System</h1>
+    <p>
+        Manage Orders,inventory and restaurant sales in one place
+    </p>
+    <a class="button" href="/menu">
+        View Menu 
+    </a>
+
+</div>
+<div class="cards">
+    <div class="card">
+        <h3>Menu Items</h3>
+        <h2>{{total_items}}</h2>
+    </div>
+    <div class="card">
+        <h3>Total Orders</h3>
+        <h2>{{total_orders}}</h2>
+    </div>
+    <div class="card">
+        <h3>Total Revenue</h3>
+        <h2>₹{{"%.2f"|format(total_revenue)}}</h2>
+    </div>
+    <div class="card">
+        <h3>Low Stock Items</h3>
+        <h2>{{low_stock}}</h2>
+    </div>
+</div>
+{% endblock %}
